@@ -26,7 +26,7 @@ configurations.all {
     resolutionStrategy.force 'com.android.support:support-annotations:26.1.0'
 }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
@@ -35,7 +35,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.google.code.gson:gson:2.8.2'
-    compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+    implementation('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
         exclude module: 'support-v4'
     }
+    implementation files('lib/csparql-common-0.9.5.jar')
 }
